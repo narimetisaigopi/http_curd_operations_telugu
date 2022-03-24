@@ -19,27 +19,39 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-                onPressed: () async {
-                  registerUser();
-                },
-                child: Text("Register User")),
-            ElevatedButton(
-                onPressed: () async {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (builder) => GetUsersList()));
-                },
-                child: Text("Get Users")),
-            ElevatedButton(
-                onPressed: () async {
-                  updateUser();
-                },
-                child: Text("Update")),
-            ElevatedButton(
-                onPressed: () async {
-                  deleteUser();
-                },
-                child: Text("Delete"))
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    registerUser();
+                  },
+                  child: Text("Register User")),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (builder) => GetUsersList()));
+                  },
+                  child: Text("Get Users")),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    updateUser();
+                  },
+                  child: Text("Update")),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width / 2,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    deleteUser();
+                  },
+                  child: Text("Delete")),
+            )
           ],
         ),
       ),
